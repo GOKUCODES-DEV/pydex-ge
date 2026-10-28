@@ -1,0 +1,27 @@
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build / packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local environment
+.env

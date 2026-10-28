@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PYDEX-GE"
+version = "1.0.0"
+description = "A beginner-friendly Python game-development framework."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "PYDEX contributors" }]
+keywords = ["game", "games", "sdl2", "framework"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Games/Entertainment",
+]
+dependencies = [
+    "pysdl2>=0.9.17",
+    "pysdl2-dll>=2.20",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pydex_ge*"]
+
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+exclude = ["github"]
+
+[tool.ruff.lint]
+ignore = [
+    "B018",      # intentional property-access assertions in tests
+    "B017",      # assertRaises(Exception) used deliberately
+    "BLE001",    # broad except is intentional in places
+    "C413",
+    "F541",
+    "ISC004",
+    "PLR0402",
+    "PLR0124",
+    "PLR1730",
+    "PLW1510",
+    "PYI034",
+    "PYI041",
+    "PYI045",
+    "RET501",
+    "RUF012",
+    "RUF017",
+    "RUF022",
+    "RUF023",
+    "RUF046",
+    "RUF059",
+    "S110", "S112",   # intentional silent handling in CLIs/cleanup paths
+    "SIM102",
+    "SIM103",
+    "SIM114",
+    "SIM117",
+    "UP031",   # %-format is fine here
+    "UP037",   # forward-ref quotes are fine
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+norecursedirs = ["github", "examples", "games", "tested"]
